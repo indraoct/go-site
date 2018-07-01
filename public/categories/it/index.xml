@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>It on Software Engineer and Product Manager</title>
+    <link>https://indraoctama.com/categories/it/</link>
+    <description>Recent content in It on Software Engineer and Product Manager</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 09 Jun 2018 23:43:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://indraoctama.com/categories/it/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang for Beginner Part 1.2: Print Data as JSON API</title>
+      <link>https://indraoctama.com/golang-for-beginner-part-1.2-print-data-as-json-api-20180609/</link>
+      <pubDate>Sat, 09 Jun 2018 23:43:00 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/golang-for-beginner-part-1.2-print-data-as-json-api-20180609/</guid>
+      <description>Hari ini kita akan belajar mengenai print data DB MySQL ke dalam bentuk web JSON API. Anda bisa fork full codenya disini : Full Code
+Mengingat kembali postingan sebelumnya mengenai print data row dari mysql yakni Print Data From DB MySQL. Kita akan sedikit memodifikasi fungsi-fungsi sebelumnya yakni dengan menambahkan komponen-komponen seperti :
+ Gorilla Mux &amp;ndash;&amp;gt; library 3rd party digunakan untuk routing web &amp;ldquo;json/encoding&amp;rdquo; &amp;ndash;&amp;gt; library go untuk mengakomodasi fungsi-fungsi membaca dan menulis data ke dalam bentuk JSON &amp;ldquo;net/http&amp;rdquo; &amp;ndash;&amp;gt; library go untuk keperluan fungsi http seperti GET, POST, PUT, dsb.</description>
+    </item>
+    
+    <item>
+      <title>Golang for Beginner Part 1: Print Data From DB MySQL</title>
+      <link>https://indraoctama.com/golang-for-beginner-part-1-print-data-from-db-mysql-20180607/</link>
+      <pubDate>Thu, 07 Jun 2018 21:13:35 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/golang-for-beginner-part-1-print-data-from-db-mysql-20180607/</guid>
+      <description>Hari ini kita akan belajar bagaimana menulis data row yang ada di database mysql dengan cara koding dengan bahasa Go. Pertama-tama silahkan unduh dump mysql disini :
+goforbeginner.sql
+Buatlah database bernama &amp;ldquo;goforbeginner&amp;rdquo;, lalu import file goforbeginner.sql tersebut ke db &amp;ldquo;goforbeginner&amp;rdquo; tersebut. Jika sudah maka strukturnya akan seperti ini : Kita akan fokuskan kepada table products dengan data yang sudah tersedia sebagai berikut : Mari kita buat dulu structure code nya sebagai berikut :</description>
+    </item>
+    
+  </channel>
+</rss>

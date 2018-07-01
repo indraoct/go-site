@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Software Engineer and Product Manager</title>
+    <link>https://indraoctama.com/tags/</link>
+    <description>Recent content in Tags on Software Engineer and Product Manager</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 09 Jun 2018 23:43:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://indraoctama.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Api</title>
+      <link>https://indraoctama.com/tags/api/</link>
+      <pubDate>Sat, 09 Jun 2018 23:43:00 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>https://indraoctama.com/tags/data/</link>
+      <pubDate>Sat, 09 Jun 2018 23:43:00 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://indraoctama.com/tags/golang/</link>
+      <pubDate>Sat, 30 Jun 2018 17:34:41 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gorrila Mux</title>
+      <link>https://indraoctama.com/tags/gorrila-mux/</link>
+      <pubDate>Sat, 09 Jun 2018 23:43:00 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/gorrila-mux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>https://indraoctama.com/tags/json/</link>
+      <pubDate>Sat, 09 Jun 2018 23:43:00 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://indraoctama.com/tags/mysql/</link>
+      <pubDate>Sat, 09 Jun 2018 23:43:00 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rest</title>
+      <link>https://indraoctama.com/tags/rest/</link>
+      <pubDate>Sat, 09 Jun 2018 23:43:00 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unit Test</title>
+      <link>https://indraoctama.com/tags/unit-test/</link>
+      <pubDate>Sat, 30 Jun 2018 17:34:41 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/tags/unit-test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

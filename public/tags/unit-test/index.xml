@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unit Test on Software Engineer and Product Manager</title>
+    <link>https://indraoctama.com/tags/unit-test/</link>
+    <description>Recent content in Unit Test on Software Engineer and Product Manager</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 30 Jun 2018 17:34:41 +0700</lastBuildDate>
+    
+	<atom:link href="https://indraoctama.com/tags/unit-test/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang for Beginner Part 2.0: Unit Testing</title>
+      <link>https://indraoctama.com/golang-for-beginner-part-2.0-unit-testing-20180630/</link>
+      <pubDate>Sat, 30 Jun 2018 17:34:41 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/golang-for-beginner-part-2.0-unit-testing-20180630/</guid>
+      <description>Tidak mudah untuk membuat sebuah sistem software yang handal dan mempertahankannya dalam waktu yang lama. Salah satu cara untuk mengetahui bahwa code yang sudah kita buat apakah sesuai dengan ekspektasi flow bisnis dan performance adalah melakukan Unit Testing. Unit testing adalah salah satu jenis proses otomatisasi test aplikasi software dengan scope yang paling kecil yang bisa di test. Disebut unit karena secara individual dan mandiri (tidak tergantung dengan flow proses yang lain) dapat di test sehingga dapat memastikan apakah outputnya sudah sesuai dengan ekspektasi kita.</description>
+    </item>
+    
+  </channel>
+</rss>

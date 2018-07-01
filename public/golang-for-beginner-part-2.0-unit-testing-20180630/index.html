@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Indra Octama">
+<meta name="description" content="Tidak mudah untuk membuat sebuah sistem software yang handal dan mempertahankannya dalam waktu yang lama. Salah satu cara untuk mengetahui bahwa code yang sudah kita buat apakah sesuai dengan ekspektasi flow bisnis dan performance adalah melakukan Unit Testing. Unit testing adalah salah satu jenis proses otomatisasi test aplikasi software dengan scope yang paling kecil yang bisa di test. Disebut unit karena secara individual dan mandiri (tidak tergantung dengan flow proses yang lain) dapat di test sehingga dapat memastikan apakah outputnya sudah sesuai dengan ekspektasi kita.">
+
+<meta property="og:image" content="https://lh3.googleusercontent.com/sk3N8UdXdZJuOeVII_OBd3vUhJg0bjWoncxu5sCuhoAO2aL114sxqjfVIJJfo82RD0kn7K76LBbT_UkyTFyte3t3C-sjR-JAjJ1HQc5Rfy56B2olHUf7KEC7OF-iPsV5ysTObyzxWg=w2400" />
+
+<meta property="og:title" content="Golang for Beginner Part 2.0: Unit Testing" />
+<meta property="og:description" content="Tidak mudah untuk membuat sebuah sistem software yang handal dan mempertahankannya dalam waktu yang lama. Salah satu cara untuk mengetahui bahwa code yang sudah kita buat apakah sesuai dengan ekspektasi flow bisnis dan performance adalah melakukan Unit Testing. Unit testing adalah salah satu jenis proses otomatisasi test aplikasi software dengan scope yang paling kecil yang bisa di test. Disebut unit karena secara individual dan mandiri (tidak tergantung dengan flow proses yang lain) dapat di test sehingga dapat memastikan apakah outputnya sudah sesuai dengan ekspektasi kita." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://indraoctama.com/golang-for-beginner-part-2.0-unit-testing-20180630/" />
+
+
+
+<meta property="article:published_time" content="2018-06-30T17:34:41&#43;07:00"/>
+
+<meta property="article:modified_time" content="2018-06-30T17:34:41&#43;07:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Golang for Beginner Part 2.0: Unit Testing 
+
+</title>
+<link rel="canonical" href="https://indraoctama.com/golang-for-beginner-part-2.0-unit-testing-20180630/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://indraoctama.com/css/reset.css?t=2018-07-01%2023%3a36%3a09.313093642%20%2b0700%20WIB%20m%3d%2b0.058411149">
+    <link rel="stylesheet" href="https://indraoctama.com/css/pygments.css?t=2018-07-01%2023%3a36%3a09.313093642%20%2b0700%20WIB%20m%3d%2b0.058411149">
+    <link rel="stylesheet" href="https://indraoctama.com/css/main.css?t=2018-07-01%2023%3a36%3a09.313093642%20%2b0700%20WIB%20m%3d%2b0.058411149">
+    
+        <link rel="stylesheet" href="https://indraoctama.com/css/override.css?t=2018-07-01%2023%3a36%3a09.313093642%20%2b0700%20WIB%20m%3d%2b0.058411149">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://indraoctama.com/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://indraoctama.com/"><img class="avatar" src="https://indraoctama.com/img/profile.jpg" srcset="https://indraoctama.com/img/profile.jpg 1x"></a>
+            
+            <a href="https://indraoctama.com/"><div class="name">Indra Octama</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-about"><a href="https://indraoctama.com/about/"><span>About Me</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://indraoctama.com/blog/"><span>Blog</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/indraoct" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/indra96" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/indra-octama-59409728" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+            <a href="//instagram.com/indra.octama" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:omyank2007i@gmail.com"><img class="icon" src="https://indraoctama.com/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Golang for Beginner Part 2.0: Unit Testing
+
+</div>
+
+                    <div class="initials"><a href="https://indraoctama.com">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Jun 30 2018 17:34:41 WIB'>Jun 30, 2018</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><img src="https://lh3.googleusercontent.com/sk3N8UdXdZJuOeVII_OBd3vUhJg0bjWoncxu5sCuhoAO2aL114sxqjfVIJJfo82RD0kn7K76LBbT_UkyTFyte3t3C-sjR-JAjJ1HQc5Rfy56B2olHUf7KEC7OF-iPsV5ysTObyzxWg=w200" alt="Unit_Testing" /></p>
+
+<p>Tidak mudah untuk membuat sebuah sistem software yang handal dan mempertahankannya dalam waktu yang lama. Salah satu cara
+untuk mengetahui bahwa <em>code</em> yang sudah kita buat apakah sesuai dengan ekspektasi flow bisnis dan <em>performance</em> adalah melakukan
+<strong>Unit Testing</strong>. Unit testing adalah salah satu jenis proses otomatisasi test aplikasi software dengan scope yang paling kecil
+yang bisa di test. Disebut unit karena secara individual dan mandiri (tidak tergantung dengan flow proses yang lain) dapat
+di test sehingga dapat memastikan apakah outputnya sudah sesuai dengan ekspektasi kita.</p>
+
+<p>Di bahasa Go, satu <em>function</em> atau <em>method</em> bisa diartikan sebagai <strong>unit</strong>.</p>
+
+<p>Mari kita mulai dengan membuat file aplikasi dan file test dalam sebuah folder yang sama dan dengan nama <em>package</em> yang sama.
+Saya membuat 1 file aplikasi operasi string sebagai berikut :</p>
+
+<script src="//gist.github.com/indraoct/c203ec86ac3eb0683109600ce7badcc7.js"></script>
+
+<p>Saya membuat 2 fungsi operasi string yakni <strong>SwapCase</strong> dan <strong>Reverse</strong> . <em>Swapcase</em> untuk mengubah string yang awalanya upercase ke lowercase
+begitupun sebaliknya mengubah string yang awalnya lowercase menjadi uppercase. <em>Reverse</em> untuk mengubah string supaya urutannya terbalik.</p>
+
+<p><strong>SwapCase</strong> Ekspektasi :</p>
+
+<pre><code>    Before :        
+    &quot;Hello, World&quot;
+    
+    After :     
+    &quot;hELLO, wORLD&quot;
+
+</code></pre>
+
+<p><strong>Reverse</strong> Ekspektasi :</p>
+
+<pre><code>     Before :        
+        &quot;Hello, World&quot;
+        
+     After :     
+     &quot;dlroW ,olleH&quot;
+
+</code></pre>
+
+<p>Mari kita kita buktikan apakah code kita sudah sesuai dengan ekspektasi, yakni dengan membuat 1 file test. Di GO, aturan untuk
+membuat file test yakni dengan cara : [NAMA_FILE]_test.go seperti berikut :</p>
+
+<script src="//gist.github.com/indraoct/e56973aeb433808dd891c4ec372042c1.js"></script>
+
+<p>Cara melakukan unit testing bisa dengan perintah seperti berikut:</p>
+
+<pre><code>    go test -v
+</code></pre>
+
+<p>Setelah dijalankan, jika aplikasi yang kita jalankan sesuai dengan ekspektasi unit test maka akan dapat hasil sebagai berikut :</p>
+
+<p><img src="https://lh3.googleusercontent.com/9cDvrEu7j6tNXWaBgttG_oaO3cpKHrxyHXM6E1MRoalEt6iL0x3UectssmoekevCl4_xcKvJNKn48_vXo084qaNOHFYY-LJOmzDew7pQMlEqRKVnBdV7a5MCj56ZimBoDmcPZGKXaA=w500" alt="Terminal" /></p>
+
+<p>Source code bisa di clone dari sini : <a href="https://github.com/indraoct/go-for-beginner/tree/master/part2">Full Code</a></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://indraoctama.com/tags/golang">Golang</a>
+                  
+                    <a href="https://indraoctama.com/tags/unit-test">Unit Test</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://indraoctama.com/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "indraoctama-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-61778597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

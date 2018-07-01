@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://indraoctama.com/golang-for-beginner-part-2.0-unit-testing-20180630/</loc>
+    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/golang-for-beginner-part-1.2-print-data-as-json-api-20180609/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/golang-for-beginner-part-1-print-data-from-db-mysql-20180607/</loc>
+    <lastmod>2018-06-07T21:13:35+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/about/</loc>
+    <lastmod>2018-06-06T13:43:52+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/my-first-post-20180605/</loc>
+    <lastmod>2018-06-05T16:56:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/api/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/blog/</loc>
+    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/data/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/golang/</loc>
+    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/gorrila-mux/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/categories/it/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/json/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/mysql/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/categories/programming/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/rest/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/</loc>
+    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/</loc>
+    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/unit-test/</loc>
+    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
