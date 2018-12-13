@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://indraoctama.com/docker-for-dummy-with-golang-mysql-20181213/</loc>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://indraoctama.com/golang-for-beginner-part-2.0-unit-testing-20180630/</loc>
     <lastmod>2018-06-30T17:34:41+07:00</lastmod>
   </url>
@@ -35,7 +40,7 @@
   
   <url>
     <loc>https://indraoctama.com/blog/</loc>
-    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -46,13 +51,25 @@
   
   <url>
     <loc>https://indraoctama.com/tags/data/</loc>
-    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/categories/devops/</loc>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://indraoctama.com/tags/docker/</loc>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://indraoctama.com/tags/golang/</loc>
-    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -64,7 +81,7 @@
   
   <url>
     <loc>https://indraoctama.com/categories/it/</loc>
-    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -76,13 +93,13 @@
   
   <url>
     <loc>https://indraoctama.com/tags/mysql/</loc>
-    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://indraoctama.com/categories/programming/</loc>
-    <lastmod>2018-06-09T23:43:00+07:00</lastmod>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,7 +111,7 @@
   
   <url>
     <loc>https://indraoctama.com/</loc>
-    <lastmod>2018-06-30T17:34:41+07:00</lastmod>
+    <lastmod>2018-12-13T13:38:33+07:00</lastmod>
     <priority>0</priority>
   </url>
   

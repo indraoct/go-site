@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Indra Octama">
+<meta name="description" content="Say Hi&hellip; Halo teman-teman, lama belom nulis karena sedang ada beberapa kesibukan dan harus belajar yang bener sebelum nulis hehe. Pada kesempatan ini, saya akan membagikan pengalaman saya mengenai bagaiamana mengoperasikan docker secara sederhana melalui contoh aplikasi Golang. Tentunya artikel ini bukan artikel yang ditujukan kepada mastah-mastah yang sudah malang melintang di dunia devops. Saya menulis artikel ini dalam perspektif supaya saya yang seorang developer sedikit tahu apa yang dilakukan teman-teman devops supaya ketika bekerjasama nantinya akan mendapatkan hasil yang efektif.">
+<meta property="og:image" content="https://lh3.googleusercontent.com/ci-Q2sLo1q02SHx4gdDqHrEDy-QTwrnmLqXxYvF_594le6sI3hEt6feVDwhQQzvGAooqhv-g1ltW8-7AGkhv8rA2XT-zwhFD-76tagiGlv_xzFgAVgTZjPPUFrLu3ebgihZHjUKYL5ENmuYOkhaH0_siEDa3F5AQ6axkBoUZgWgO1V0U-kUW-aF8zByHAilhyQbiLSaIQahSXfvre9Whkc0o0Uq_k85no5j4ggjwt51B1lsEbyXPxkjKuzGxHYWDcWMAT1pNCPZlXisdAeNDy5uG4B7TMwkxp26gGFa8ciPXLr4ppE8p9YPF0BOyuf1rDK7fhhIrMrU5S6zaB_hXD7uZRjo1XsVoicKpX7aXK6WWDJzAi9XZ8R4Gg6a7xLKWgHqcK0zuhW5DGzr3EK9fYc23m4wfT5TVp6UN960VC85nT_oWqJhTT-BmJId566CM0zqmhbLDAlFv7YJXEP6tc0ek4amgbJ2-iBWRYYVlQ5UswSA3iOEj7zsGNXu8ry7iWj1Y_4nBLpKBG3NRRdjLyGpWZK9g7R1bYUlOcdBG5c-Mh2sMhDlUFgp9CiDjSbZCWu6JIN3mL64-0REy8Pck148eztK-7qjpGCMx6LzGE-xHRz-n-g7_H3nv518gMdcF9hKyL2NLRvIsEaaFvIxiDrPs=w884-h271-no?w=240" />
+
+<meta property="og:title" content="Docker for Dummy With Golang &amp; MySQL" />
+<meta property="og:description" content="Say Hi&hellip; Halo teman-teman, lama belom nulis karena sedang ada beberapa kesibukan dan harus belajar yang bener sebelum nulis hehe. Pada kesempatan ini, saya akan membagikan pengalaman saya mengenai bagaiamana mengoperasikan docker secara sederhana melalui contoh aplikasi Golang. Tentunya artikel ini bukan artikel yang ditujukan kepada mastah-mastah yang sudah malang melintang di dunia devops. Saya menulis artikel ini dalam perspektif supaya saya yang seorang developer sedikit tahu apa yang dilakukan teman-teman devops supaya ketika bekerjasama nantinya akan mendapatkan hasil yang efektif." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://indraoctama.com/docker-for-dummy-with-golang-mysql-20181213/" /><meta property="article:published_time" content="2018-12-13T13:38:33&#43;07:00"/>
+<meta property="article:modified_time" content="2018-12-13T13:38:33&#43;07:00"/>
+
+
+<title>
+
+
+     Docker for Dummy With Golang &amp; MySQL 
+
+</title>
+<link rel="canonical" href="https://indraoctama.com/docker-for-dummy-with-golang-mysql-20181213/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://indraoctama.com/css/reset.css?t=2018-12-13%2017%3a01%3a41.784971%20%2b0700%20WIB%20m%3d%2b0.202916038">
+    <link rel="stylesheet" href="https://indraoctama.com/css/pygments.css?t=2018-12-13%2017%3a01%3a41.784971%20%2b0700%20WIB%20m%3d%2b0.202916038">
+    <link rel="stylesheet" href="https://indraoctama.com/css/main.css?t=2018-12-13%2017%3a01%3a41.784971%20%2b0700%20WIB%20m%3d%2b0.202916038">
+    
+        <link rel="stylesheet" href="https://indraoctama.com/css/override.css?t=2018-12-13%2017%3a01%3a41.784971%20%2b0700%20WIB%20m%3d%2b0.202916038">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://indraoctama.com/img/leaf.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://indraoctama.com/"><img class="avatar" src="https://indraoctama.com/img/profile.jpg" srcset="https://indraoctama.com/img/profile.jpg 1x"></a>
+            
+            <a href="https://indraoctama.com/"><div class="name">Indra Octama</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-about"><a href="https://indraoctama.com/about/"><span>About Me</span></a></li>
+                    
+                        <li class="nav-blog"><a href="https://indraoctama.com/blog/"><span>Blog</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/indraoct" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="//twitter.com/indra96" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/indra-octama-59409728" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="//instagram.com/indra.octama" target="_blank" rel="noopener"><img class="icon" src="https://indraoctama.com/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:omyank2007i@gmail.com"><img class="icon" src="https://indraoctama.com/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Docker for Dummy With Golang &amp; MySQL
+
+</div>
+
+                    <div class="initials"><a href="https://indraoctama.com">ad</a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu Dec 13 2018 13:38:33 WIB'>Dec 13, 2018</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p><img src="https://lh3.googleusercontent.com/fvAGQxdVsOlGVvXkWyjgjQAwrOaoT1zrct_4FCj-9GD2QStUH3RVGWNGVh6EMIdcWZPHvsEluLTHlltDcVRdkh1eXNEJjZ3bq6YEuEc2McOrONkNsMpfAjB3VKTkZMiWsamFMKCXmjpPzeyUnX5vHkjiS5HwpZXjZZXMLMc-GsdXZjfABZbuXp_ZKO35GHZsadONLzFbBzgy3uMxS_P_reKFj-rqUvTf-_mrnwCklAz7a-kjDa7NskNceBd0AtliEZzZtNdEKIQFU_HT5jpGLRir8jQl6gclcyLG-dtGihyQbhzeIg7OmY8xyrO2LqnuRlozZbmT4fEPRL1uqTTV9G0ecO65NlGeL0LydjA-nzgmLJozXg12RwldyYfQjlIloMhgHR6mjZm2bGtHDipHqPbstTva24RBkURIIutoeUmYXCByO0wXMID4ja-QP1EVgVczjYTw5kKYmHb70kTQyw-gUV6pECjvYGWl0oFtUshkO2_mmLtYhfUj_-bLyR63OutRAhHUoP9HPc3diWCn9S0W13OjZsTydwGWHj20Tyev3W5xZkGYPBZAF8I-u3uyKZpK7Oq-hvJj4rUMe5p4lCjnoaMmHd-TaTV_QaVBLfcrOpFA9by-9eOwCf4w75mdVNHt2fDe0j-jE0z-UjMeCmwo=w533-h193-no?w=200" alt="Docker_For_Dummy" /></p>
+
+<h1 id="say-hi">Say Hi&hellip;</h1>
+
+<p>Halo teman-teman, lama belom nulis karena sedang ada beberapa kesibukan dan harus belajar yang bener sebelum nulis hehe.
+Pada kesempatan ini, saya akan membagikan pengalaman saya mengenai bagaiamana mengoperasikan docker secara sederhana melalui contoh aplikasi
+Golang. Tentunya artikel ini bukan artikel yang ditujukan kepada <em>mastah-mastah</em> yang sudah malang melintang di dunia <strong><em>devops</em></strong>. Saya menulis artikel ini
+dalam perspektif supaya saya yang seorang <strong><em>developer</em></strong> sedikit tahu apa yang dilakukan teman-teman devops supaya ketika bekerjasama nantinya
+akan mendapatkan hasil yang efektif.</p>
+
+<h1 id="ngapain-sih-pake-docker">Ngapain sih pake Docker?</h1>
+
+<p>Secara sederhana saya akan coba menjelaskan sebeneranya apa tujuan menggunakan docker di dalam lingkungan software development.
+Docker dalam perspective saya adalah tools untuk menyamakan <em>environtment</em> antara komputer lokal, server development , dan server production.
+Sehingga Docker ini dianalogikan sebagai tools untuk membuat sebuah <em>container-container</em> yang berisi binary aplikasi yang siap dijalankan,
+<em>software developement kit</em> , <em>nginx</em>, <em>mysql</em>, dsb yang saling ketergantungan dan versi nya harus sesuai untuk menjalankan aplikasi.
+Keuntungan lainnya seperti aplikasi yang terisolasi dan kemudahan dalam melakukan <em>scalability</em> , tapi kita tidak akan panjang lebar di teori.
+Mari kita PRAKTEK!!! <strong>#HiyaHiyaHiya</strong></p>
+
+<h1 id="bikin-golang-mysqlnya-dulu-braderr">Bikin Golang &amp; MySQLnya dulu Braderr&hellip;</h1>
+
+<p>Asumsinya, temen-temen sudah menginstall docker , golang, mysql di komputer masing-masing <strong>#HiyaHiyaHiya</strong>. Sebelum mulai, silahkan buat database dan data nya dulu dengan MySQL :</p>
+
+<pre><code class="language-mysql">
+CREATE DATABASE dockeraja;
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `is_active` int(11) DEFAULT NULL COMMENT 
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+// lalu silahkan Insert dengan data kalian sendiri suka suka ... #HiyaHiyaHiya
+
+</code></pre>
+
+<p>Oiya jangan lupa kita harus memastikan supaya aplikasi docker dapat mengakses host mysql yakni dengan cara :</p>
+
+<h3 id="dapatkan-data-ip-address-kita-yang-bisa-diakses-dengan-ifconfig-linux-macos-xixixixi-d">Dapatkan data ip address kita yang bisa diakses dengan ifconfig (linux/macOS) xixixixi :D</h3>
+
+<pre><code class="language-text">~indraoctama-terminal&gt;ifconfig
+en6: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+	options=3&lt;RXCSUM,TXCSUM&gt;
+	ether 00:50:b6:1c:be:b6 
+	inet6 fe80::107c:152c:8376:7b3%en6 prefixlen 64 secured scopeid 0x5 
+	inet 192.168.10.191 netmask 0xffffff00 broadcast 192.168.10.255
+	nd6 options=201&lt;PERFORMNUD,DAD&gt;
+	media: autoselect (100baseTX &lt;full-duplex,flow-control&gt;)
+	status: active
+</code></pre>
+
+<p>Setelah melakukan <em>command</em> di atas, kita mendapatkan ip address yang bisa diakses adalah <strong>192.168.10.191</strong>. Sehingga kita nanti akan melakukan set
+DB_HOST= <strong>192.168.10.191</strong> dan DB_PORT=<strong>3306</strong> (default). Untuk user dan password mysql kalian bikin sesuai keikhlasan masing2 :D.
+Jika teman-teman mengalami kendala tidak bisa mengakses dengan kondisi host di atas bisa mencoba artikel ini :
+<a href="https://stackoverflow.com/questions/6239131/how-to-grant-remote-access-permissions-to-mysql-server-for-user">GRANT mysql user to remote IP</a></p>
+
+<h3 id="lanjut-ke-golang">Lanjut ke Golang</h3>
+
+<p>Kita akan membuat struktur folder aplikasi seperti gambar berikut ini :
+<img src="https://lh3.googleusercontent.com/xZ-BGZJTpKSMBoIvpiE4WKF_bM_JGfF3-92_GvkFZLeUMN4o1Lici_uuTGPLVB840PRT6ZcMvqBEHDedmqvb5ear6cRHCUgSKjyBgO0h6tnSMMX75wCntVhvnAAcVmiQ_lx95YLQhwzzcphr2MQMmONXPUYFMrN2PZkKP92glVhzf6v38V3ghpTCm-aGmR3GxauXi350GZtqixQHniF-grtcYsmyVwHDdDAfiCVN8woHBsVZ21zufUfJLgJ4hu02MA3E4vbNlQsiUS7pQrucf1OU1g1SM0YvMaG-NsIlh2FlJezFdSfhEwjCu-5KyQCb2kKb1gOWtn3k1uPefScC3y2JtFhCC54mm2RQjwN1Y-86ISyQ5V7nhy703ZIs_iXrd1vnkDY9z9ZO61fK8yZqla_9EmNeqlVmCq14sf5LO0Q4Mqjo3M0VJXUc7YfEm83G9zGZrjVkQKaGPOcy0NrTvielSQW29-4SLSCfhiQq9dnzvDLkPS6NsClv2pPIfLsu4s7GeIj890dOSV861aoW9x4bzMcZ84EGk4x9DPVu3e7ltPBj5MutKeSBdtg_t5Kl9WEbR_6eS-YCEencv2Pfdbkb749eBo7fw_rx8pMv3hFlpjcTbuaYo938v0aOgcQWMuOA9yl71k-PoJrgcVC_ZGZT=w558-h198-no" alt="Struktur_Folder" /></p>
+
+<h4 id="main-go">main.go</h4>
+
+<script type="application/javascript" src="//gist.github.com/indraoct/a8225656a18f2e47b549c1099a5d2a9d.js"></script>
+
+<h4 id="dockerfile">Dockerfile</h4>
+
+<pre><code class="language-text">FROM golang:1.11.1
+
+MAINTAINER Indra Octama omyank2007i@gmail.com
+ADD . /go/src/dockerinaja
+
+ARG appname=e-document-api
+ARG http_port=1323
+
+RUN go get -d github.com/go-sql-driver/mysql
+RUN go get -d github.com/labstack/echo
+RUN go install dockerinaja
+
+ENTRYPOINT /go/bin/dockerinaja
+
+ENV PORT $http_port
+ENV DB_HOST 192.168.10.191
+ENV DB_PORT 3306
+ENV DB_USER userdocker
+ENV DB_PASS passdocker
+
+EXPOSE $http_port
+
+RUN mkdir -p /go/src/dockerinaja
+COPY . /go/src/dockerinaja
+WORKDIR /go/src/dockerinaja
+
+CMD go run main.go
+
+</code></pre>
+
+<h1 id="dockerizing-hiyahiyahiya">Dockerizing &hellip; #HiyaHiyaHiya</h1>
+
+<p>Setelah selesai ngodingnya, maka kita bisa cobain <em>command</em> berikut (tentunya masih dalam satu folder &ldquo;dockerinaja&rdquo; diatas) :</p>
+
+<h3 id="build-image-apps">Build image apps</h3>
+
+<pre><code class="language-text">docker build -t dockerinaja .
+</code></pre>
+
+<p>Command di atas akan mengenerate docker image untuk keperluan menjalankan aplikasi.</p>
+
+<h3 id="check-images">Check Images</h3>
+
+<p>Kita dapat mengecheck apakah image sudah terbentuk? Yakni dengan <em>command</em> berikut :</p>
+
+<pre><code class="language-text">docker images
+</code></pre>
+
+<p>Lalu penampakan nya kurang lebih seperti ini :</p>
+
+<pre><code class="language-text">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+dockerinaja         latest              78de7207aa5a        3 minutes ago       952MB
+golang              1.11.1              45e48f60e268        2 minutes ago       777MB
+</code></pre>
+
+<h3 id="run-image-aplikasinya">Run image aplikasinya</h3>
+
+<p>Lalu kita dapat menjalankan aplikasinya sebagai berikut :</p>
+
+<pre><code class="language-text">docker run -p 1323:1323 -t dockerinaja
+</code></pre>
+
+<p>untuk check apakah sudah running atau belum dengan cara berikut :</p>
+
+<pre><code class="language-text">docker ps
+</code></pre>
+
+<p>Lalu akan terjadi penampakan sebagai berikut :</p>
+
+<pre><code class="language-text">CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS         PORTS                   NAMES
+9e29660a6901   dockerinaja  &quot;/bin/sh -c /go/bin/…&quot;   5 seconds ago    Up 5 seconds   0.0.0.0:1323-&gt;1323/tcp  upbeat_hamilton
+</code></pre>
+
+<p>Kita telah berhasil menjalankan aplikasi golang dengan docker, mari kita coba dengan insomnia :</p>
+
+<p><img src="https://lh3.googleusercontent.com/q3VQF8uob9KbZQCaBSJGdTOXVgJ5Cu4z64hWpMi9Qy36t7gP4dJ_kdGFgXFRy2_jgYq6ubI2EQSIK4DRQ2dbR0tHnyU7i0tGGhaoEn6NIUOODOtWhHGlA7S-iFA9wBqYXOtbaFJVutWPuHaN4I6o2NbXG2XHo7iAv7hvHtUwMMSqV03Ij9_7-9exHqOEfGbe4Gccr7LEDImckdBU5dGELeChMyQLNh6N8IZqwYbvxf8C49TLU1GjRd2uFkXn7X7hCabyLKZKo1fHi4325VXUodcCAZmEk2gYKj36wofAJRsDArjqRPx8JD4OdleUxyOl7m0m3DqL9SHVcwXpY3sRRGlZKQQIih_B8J9YkWWvEbKF6QjvsSFRD2YbgWS3zS-iqaBSMFKCVLiZS7zP8ol2-A1gdPTuoZRDaj7HEn3gsd-QAxn0fEJ25M8Ros0KmNppf1m4-k5v_K50GOBXq4OFgyg3b_kjStM3bWyA4KjubqjalgGi4F1wmFvavb_EAT63_P68dzgoed2D2jFothTd0qFBMSnWeAn9vR51JhkMGjcSMjw04z_lOZin7pYQWeaslvOsD6gpAdZOYX3uUMElMzuUzWRCmS-1m-w7HDNTfJUUeV6eiBHy3klO4bMP1xY8cw5QE4_v-2Tpns1LpijdgGSr=w886-h689-no" alt="InsomniaAPI" />
+Oke sekian hasil percobaan yang saya lakukan, semoga teman-teman dapat melakukan percobaan sesuai dengan hasil yang diharapkan, kalo belom coba banyak berdoa <strong>#HiyaHiyaHiya</strong></p>
+
+<p><a href="https://github.com/indraoct/go-docker">Source Code</a></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://indraoctama.com/tags/golang">Golang</a>
+                  
+                    <a href="https://indraoctama.com/tags/mysql">MySql</a>
+                  
+                    <a href="https://indraoctama.com/tags/data">Data</a>
+                  
+                    <a href="https://indraoctama.com/tags/docker">Docker</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://indraoctama.com/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "indraoctama-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-61778597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+
