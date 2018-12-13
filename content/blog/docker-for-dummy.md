@@ -1,10 +1,10 @@
 ---
 title: "Docker for Dummy With Golang & MySQL"
 date: 2018-12-13T13:38:33+07:00
-draft: true
+draft: false
 tags : [Golang,MySql,Data,Docker]
 categories : [Programming,IT,Devops]
-metaimage : "https://lh3.googleusercontent.com/fvAGQxdVsOlGVvXkWyjgjQAwrOaoT1zrct_4FCj-9GD2QStUH3RVGWNGVh6EMIdcWZPHvsEluLTHlltDcVRdkh1eXNEJjZ3bq6YEuEc2McOrONkNsMpfAjB3VKTkZMiWsamFMKCXmjpPzeyUnX5vHkjiS5HwpZXjZZXMLMc-GsdXZjfABZbuXp_ZKO35GHZsadONLzFbBzgy3uMxS_P_reKFj-rqUvTf-_mrnwCklAz7a-kjDa7NskNceBd0AtliEZzZtNdEKIQFU_HT5jpGLRir8jQl6gclcyLG-dtGihyQbhzeIg7OmY8xyrO2LqnuRlozZbmT4fEPRL1uqTTV9G0ecO65NlGeL0LydjA-nzgmLJozXg12RwldyYfQjlIloMhgHR6mjZm2bGtHDipHqPbstTva24RBkURIIutoeUmYXCByO0wXMID4ja-QP1EVgVczjYTw5kKYmHb70kTQyw-gUV6pECjvYGWl0oFtUshkO2_mmLtYhfUj_-bLyR63OutRAhHUoP9HPc3diWCn9S0W13OjZsTydwGWHj20Tyev3W5xZkGYPBZAF8I-u3uyKZpK7Oq-hvJj4rUMe5p4lCjnoaMmHd-TaTV_QaVBLfcrOpFA9by-9eOwCf4w75mdVNHt2fDe0j-jE0z-UjMeCmwo=w533-h193-no?w=240"
+metaimage : "https://lh3.googleusercontent.com/ci-Q2sLo1q02SHx4gdDqHrEDy-QTwrnmLqXxYvF_594le6sI3hEt6feVDwhQQzvGAooqhv-g1ltW8-7AGkhv8rA2XT-zwhFD-76tagiGlv_xzFgAVgTZjPPUFrLu3ebgihZHjUKYL5ENmuYOkhaH0_siEDa3F5AQ6axkBoUZgWgO1V0U-kUW-aF8zByHAilhyQbiLSaIQahSXfvre9Whkc0o0Uq_k85no5j4ggjwt51B1lsEbyXPxkjKuzGxHYWDcWMAT1pNCPZlXisdAeNDy5uG4B7TMwkxp26gGFa8ciPXLr4ppE8p9YPF0BOyuf1rDK7fhhIrMrU5S6zaB_hXD7uZRjo1XsVoicKpX7aXK6WWDJzAi9XZ8R4Gg6a7xLKWgHqcK0zuhW5DGzr3EK9fYc23m4wfT5TVp6UN960VC85nT_oWqJhTT-BmJId566CM0zqmhbLDAlFv7YJXEP6tc0ek4amgbJ2-iBWRYYVlQ5UswSA3iOEj7zsGNXu8ry7iWj1Y_4nBLpKBG3NRRdjLyGpWZK9g7R1bYUlOcdBG5c-Mh2sMhDlUFgp9CiDjSbZCWu6JIN3mL64-0REy8Pck148eztK-7qjpGCMx6LzGE-xHRz-n-g7_H3nv518gMdcF9hKyL2NLRvIsEaaFvIxiDrPs=w884-h271-no?w=240"
 ---
 
 ![Docker_For_Dummy](https://lh3.googleusercontent.com/fvAGQxdVsOlGVvXkWyjgjQAwrOaoT1zrct_4FCj-9GD2QStUH3RVGWNGVh6EMIdcWZPHvsEluLTHlltDcVRdkh1eXNEJjZ3bq6YEuEc2McOrONkNsMpfAjB3VKTkZMiWsamFMKCXmjpPzeyUnX5vHkjiS5HwpZXjZZXMLMc-GsdXZjfABZbuXp_ZKO35GHZsadONLzFbBzgy3uMxS_P_reKFj-rqUvTf-_mrnwCklAz7a-kjDa7NskNceBd0AtliEZzZtNdEKIQFU_HT5jpGLRir8jQl6gclcyLG-dtGihyQbhzeIg7OmY8xyrO2LqnuRlozZbmT4fEPRL1uqTTV9G0ecO65NlGeL0LydjA-nzgmLJozXg12RwldyYfQjlIloMhgHR6mjZm2bGtHDipHqPbstTva24RBkURIIutoeUmYXCByO0wXMID4ja-QP1EVgVczjYTw5kKYmHb70kTQyw-gUV6pECjvYGWl0oFtUshkO2_mmLtYhfUj_-bLyR63OutRAhHUoP9HPc3diWCn9S0W13OjZsTydwGWHj20Tyev3W5xZkGYPBZAF8I-u3uyKZpK7Oq-hvJj4rUMe5p4lCjnoaMmHd-TaTV_QaVBLfcrOpFA9by-9eOwCf4w75mdVNHt2fDe0j-jE0z-UjMeCmwo=w533-h193-no?w=200)
@@ -54,15 +54,14 @@ en6: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 	media: autoselect (100baseTX <full-duplex,flow-control>)
 	status: active
 ```
-Setelah melakukan comand di atas, kita mendapatkan ip address yang bisa diakses adalah **192.168.10.191**. Sehingga kita nanti akan melakukan set 
+Setelah melakukan _command_ di atas, kita mendapatkan ip address yang bisa diakses adalah **192.168.10.191**. Sehingga kita nanti akan melakukan set 
 DB_HOST= **192.168.10.191** dan DB_PORT=**3306** (default). Untuk user dan password mysql kalian bikin sesuai keikhlasan masing2 :D. 
 Jika teman-teman mengalami kendala tidak bisa mengakses dengan kondisi host di atas bisa mencoba artikel ini :
 [GRANT mysql user to remote IP](https://stackoverflow.com/questions/6239131/how-to-grant-remote-access-permissions-to-mysql-server-for-user)
 
 ### Lanjut ke Golang
 Kita akan membuat struktur folder aplikasi seperti gambar berikut ini :
-![Struktur Folder](https://lh3.googleusercontent.com/NKDYr23BMP6Y0JKa8RMX0rIfLUmu6GfgwI1qwNErX56h3uxeSEartVYPVtaSPaMpAdkOV70-I86VxtvyxKQIdF7QgO2UY6aWU4__Ig8M4mUD7ORw7hDX411NQrT0xU5PKAYXxPP10s5lrzvG7_vsst6M7WtVYIQ8PUapnUVie8DbQjpGMI0OIxsvdVhk6XQoNn-BoTGrvnFyRgbDb4O0o8ayF5ULtMS64BYdmbd64sfj3BsA9vBMGMWF810dIJ-h1uPybgSJur1_DwsnrHaR-4wNiWNtKvYbM36tXkK1AVJWku7bWVchtA7uuaSl1QhVYIwgtmnFwMeut6Gx0QyGePevW5THRG259s9nnG8wEu5tJocdqlOnaBtcMBgceVqWoLjlB3XaTxmv6IQ3kBlT-pMI04eNOVqeFLuofZEGIawOVK85GUMz1RiWPkUmjF5k13caMVg3rCFD41LWO0T3ixGaXdlLoTnB4sAcaXTq_H2pHAa5hRwH6PZt07rFS9lvy3_W501FtkVRKEm0swS3RGfHAcqkBz2Sh2m5h8aQn78EthQoEnIg9cv1HY7JrSRJAp6WAgvJAuZZ-OV7jTQrhr4mwZcPW1rvYU-9rj_5BhyELFIocMByKpXW186pf91eMQQhh9Q9XQXIvvumn5rL6svS=w558-h198-no?w=10)
-
+![Struktur_Folder](https://lh3.googleusercontent.com/xZ-BGZJTpKSMBoIvpiE4WKF_bM_JGfF3-92_GvkFZLeUMN4o1Lici_uuTGPLVB840PRT6ZcMvqBEHDedmqvb5ear6cRHCUgSKjyBgO0h6tnSMMX75wCntVhvnAAcVmiQ_lx95YLQhwzzcphr2MQMmONXPUYFMrN2PZkKP92glVhzf6v38V3ghpTCm-aGmR3GxauXi350GZtqixQHniF-grtcYsmyVwHDdDAfiCVN8woHBsVZ21zufUfJLgJ4hu02MA3E4vbNlQsiUS7pQrucf1OU1g1SM0YvMaG-NsIlh2FlJezFdSfhEwjCu-5KyQCb2kKb1gOWtn3k1uPefScC3y2JtFhCC54mm2RQjwN1Y-86ISyQ5V7nhy703ZIs_iXrd1vnkDY9z9ZO61fK8yZqla_9EmNeqlVmCq14sf5LO0Q4Mqjo3M0VJXUc7YfEm83G9zGZrjVkQKaGPOcy0NrTvielSQW29-4SLSCfhiQq9dnzvDLkPS6NsClv2pPIfLsu4s7GeIj890dOSV861aoW9x4bzMcZ84EGk4x9DPVu3e7ltPBj5MutKeSBdtg_t5Kl9WEbR_6eS-YCEencv2Pfdbkb749eBo7fw_rx8pMv3hFlpjcTbuaYo938v0aOgcQWMuOA9yl71k-PoJrgcVC_ZGZT=w558-h198-no)
 #### main.go
 {{< gist indraoct a8225656a18f2e47b549c1099a5d2a9d >}}
 
@@ -99,7 +98,7 @@ CMD go run main.go
 ```
 
 # Dockerizing ... #HiyaHiyaHiya
-Setelah selesai ngodingnya, maka kita bisa cobain command berikut (tentunya masih dalam satu folder "dockerinaja" diatas) :
+Setelah selesai ngodingnya, maka kita bisa cobain _command_ berikut (tentunya masih dalam satu folder "dockerinaja" diatas) :
 ### Build image apps
 ```text
 docker build -t dockerinaja .
@@ -107,7 +106,7 @@ docker build -t dockerinaja .
 Command di atas akan mengenerate docker image untuk keperluan menjalankan aplikasi.
 
 ### Check Images
-Kita dapat mengecheck apakah image sudah terbentuk? Yakni dengan command berikut :
+Kita dapat mengecheck apakah image sudah terbentuk? Yakni dengan _command_ berikut :
 ```text
 docker images
 ```
@@ -135,8 +134,7 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS    
 
 Kita telah berhasil menjalankan aplikasi golang dengan docker, mari kita coba dengan insomnia :
 
-![Insomnia API](https://lh3.googleusercontent.com/KidYt4FAaoHLFTPxkoh8MXx5GRBXA-LnnPe9K2USv36b3uXnjTgmWaQFgKJFmukXFZ4n3KLPSWepty64oHdITD1PdMMBieaA2rGRPnqT7Fe-n2Q8mWaW0plQ5sBxKYaliVENLlfXq2cgy9Cw0USqXs75-MbJFfWYFA7bmzioGNbn7-dc_ZEtYGfkICusXSSqLK0M7J0EebxXtFKDngZn1Q7jAINhrR9S1-OhOmj64B4ZOmZOgK9vGBGrMonVfrRbLA0aY1vpFuGKRPiwxDzs3yRrvNHNIHdB_kTrOjzS3TQTjqmet1z0H8i33OZIz-zqoV4gUBCtwT0yAfL9hihjjsFvNJ-u9F77GZ-ghC_If_uxAk2Q8sPHnDO0q6Vqq-MJwYGRhZj98ZoJ8TJeTCl5crO7idktVBJG9aBEzt_l6CPj92PgUPsFlsvMsnOOu3DAQipjRFxTznktkJiXPUBa1E2B_PppWhlW1Ya0yTCevRu8SSkrqd7uyCBBb25Sz0WI-2kqXIQZR-LNLjCvqo8_SXjkPVoFbUgY-dRoNeGbjcBv89pWK5sPgeMUDu9dtBegF0YXTdma23bWdQvySmjOIkOBeev0KNereKPyDniQgyeHvvV4G7CyA6keppm5nQb013BqUwd5NCD-JCuMgvz3KxtD=w823-h640-no)
-
+![InsomniaAPI](https://lh3.googleusercontent.com/q3VQF8uob9KbZQCaBSJGdTOXVgJ5Cu4z64hWpMi9Qy36t7gP4dJ_kdGFgXFRy2_jgYq6ubI2EQSIK4DRQ2dbR0tHnyU7i0tGGhaoEn6NIUOODOtWhHGlA7S-iFA9wBqYXOtbaFJVutWPuHaN4I6o2NbXG2XHo7iAv7hvHtUwMMSqV03Ij9_7-9exHqOEfGbe4Gccr7LEDImckdBU5dGELeChMyQLNh6N8IZqwYbvxf8C49TLU1GjRd2uFkXn7X7hCabyLKZKo1fHi4325VXUodcCAZmEk2gYKj36wofAJRsDArjqRPx8JD4OdleUxyOl7m0m3DqL9SHVcwXpY3sRRGlZKQQIih_B8J9YkWWvEbKF6QjvsSFRD2YbgWS3zS-iqaBSMFKCVLiZS7zP8ol2-A1gdPTuoZRDaj7HEn3gsd-QAxn0fEJ25M8Ros0KmNppf1m4-k5v_K50GOBXq4OFgyg3b_kjStM3bWyA4KjubqjalgGi4F1wmFvavb_EAT63_P68dzgoed2D2jFothTd0qFBMSnWeAn9vR51JhkMGjcSMjw04z_lOZin7pYQWeaslvOsD6gpAdZOYX3uUMElMzuUzWRCmS-1m-w7HDNTfJUUeV6eiBHy3klO4bMP1xY8cw5QE4_v-2Tpns1LpijdgGSr=w886-h689-no)
 Oke sekian hasil percobaan yang saya lakukan, semoga teman-teman dapat melakukan percobaan sesuai dengan hasil yang diharapkan, kalo belom coba banyak berdoa **#HiyaHiyaHiya**
 
 [Source Code](https://github.com/indraoct/go-docker)
