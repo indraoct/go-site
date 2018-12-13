@@ -61,7 +61,7 @@ Jika teman-teman mengalami kendala tidak bisa mengakses dengan kondisi host di a
 
 ### Lanjut ke Golang
 Kita akan membuat struktur folder aplikasi seperti gambar berikut ini :
-![Struktur_Folder](https://lh3.googleusercontent.com/xZ-BGZJTpKSMBoIvpiE4WKF_bM_JGfF3-92_GvkFZLeUMN4o1Lici_uuTGPLVB840PRT6ZcMvqBEHDedmqvb5ear6cRHCUgSKjyBgO0h6tnSMMX75wCntVhvnAAcVmiQ_lx95YLQhwzzcphr2MQMmONXPUYFMrN2PZkKP92glVhzf6v38V3ghpTCm-aGmR3GxauXi350GZtqixQHniF-grtcYsmyVwHDdDAfiCVN8woHBsVZ21zufUfJLgJ4hu02MA3E4vbNlQsiUS7pQrucf1OU1g1SM0YvMaG-NsIlh2FlJezFdSfhEwjCu-5KyQCb2kKb1gOWtn3k1uPefScC3y2JtFhCC54mm2RQjwN1Y-86ISyQ5V7nhy703ZIs_iXrd1vnkDY9z9ZO61fK8yZqla_9EmNeqlVmCq14sf5LO0Q4Mqjo3M0VJXUc7YfEm83G9zGZrjVkQKaGPOcy0NrTvielSQW29-4SLSCfhiQq9dnzvDLkPS6NsClv2pPIfLsu4s7GeIj890dOSV861aoW9x4bzMcZ84EGk4x9DPVu3e7ltPBj5MutKeSBdtg_t5Kl9WEbR_6eS-YCEencv2Pfdbkb749eBo7fw_rx8pMv3hFlpjcTbuaYo938v0aOgcQWMuOA9yl71k-PoJrgcVC_ZGZT=w558-h198-no)
+![Struktur_Folder](https://cdn-images-1.medium.com/max/1600/1*w7vmvnTXSTkKOkTmwggdKQ.png)
 #### main.go
 {{< gist indraoct a8225656a18f2e47b549c1099a5d2a9d >}}
 
@@ -134,7 +134,7 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS    
 
 Kita telah berhasil menjalankan aplikasi golang dengan docker, mari kita coba dengan insomnia :
 
-![InsomniaAPI](https://lh3.googleusercontent.com/q3VQF8uob9KbZQCaBSJGdTOXVgJ5Cu4z64hWpMi9Qy36t7gP4dJ_kdGFgXFRy2_jgYq6ubI2EQSIK4DRQ2dbR0tHnyU7i0tGGhaoEn6NIUOODOtWhHGlA7S-iFA9wBqYXOtbaFJVutWPuHaN4I6o2NbXG2XHo7iAv7hvHtUwMMSqV03Ij9_7-9exHqOEfGbe4Gccr7LEDImckdBU5dGELeChMyQLNh6N8IZqwYbvxf8C49TLU1GjRd2uFkXn7X7hCabyLKZKo1fHi4325VXUodcCAZmEk2gYKj36wofAJRsDArjqRPx8JD4OdleUxyOl7m0m3DqL9SHVcwXpY3sRRGlZKQQIih_B8J9YkWWvEbKF6QjvsSFRD2YbgWS3zS-iqaBSMFKCVLiZS7zP8ol2-A1gdPTuoZRDaj7HEn3gsd-QAxn0fEJ25M8Ros0KmNppf1m4-k5v_K50GOBXq4OFgyg3b_kjStM3bWyA4KjubqjalgGi4F1wmFvavb_EAT63_P68dzgoed2D2jFothTd0qFBMSnWeAn9vR51JhkMGjcSMjw04z_lOZin7pYQWeaslvOsD6gpAdZOYX3uUMElMzuUzWRCmS-1m-w7HDNTfJUUeV6eiBHy3klO4bMP1xY8cw5QE4_v-2Tpns1LpijdgGSr=w886-h689-no)
+![InsomniaAPI](https://cdn-images-1.medium.com/max/1600/1*-NnTPmMZVp-xc7pp_N6lDg.png)
 Oke sekian hasil percobaan yang saya lakukan, semoga teman-teman dapat melakukan percobaan sesuai dengan hasil yang diharapkan, kalo belom coba banyak berdoa **#HiyaHiyaHiya**
 
 [Source Code](https://github.com/indraoct/go-docker)
