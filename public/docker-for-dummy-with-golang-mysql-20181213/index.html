@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Indra Octama">
 <meta name="description" content="Say Hi&hellip; Halo teman-teman, lama belom nulis karena sedang ada beberapa kesibukan dan harus belajar yang bener sebelum nulis hehe. Pada kesempatan ini, saya akan membagikan pengalaman saya mengenai bagaiamana mengoperasikan docker secara sederhana melalui contoh aplikasi Golang. Tentunya artikel ini bukan artikel yang ditujukan kepada mastah-mastah yang sudah malang melintang di dunia devops. Saya menulis artikel ini dalam perspektif supaya saya yang seorang developer sedikit tahu apa yang dilakukan teman-teman devops supaya ketika bekerjasama nantinya akan mendapatkan hasil yang efektif.">
-<meta property="og:image" content="https://lh3.googleusercontent.com/ci-Q2sLo1q02SHx4gdDqHrEDy-QTwrnmLqXxYvF_594le6sI3hEt6feVDwhQQzvGAooqhv-g1ltW8-7AGkhv8rA2XT-zwhFD-76tagiGlv_xzFgAVgTZjPPUFrLu3ebgihZHjUKYL5ENmuYOkhaH0_siEDa3F5AQ6axkBoUZgWgO1V0U-kUW-aF8zByHAilhyQbiLSaIQahSXfvre9Whkc0o0Uq_k85no5j4ggjwt51B1lsEbyXPxkjKuzGxHYWDcWMAT1pNCPZlXisdAeNDy5uG4B7TMwkxp26gGFa8ciPXLr4ppE8p9YPF0BOyuf1rDK7fhhIrMrU5S6zaB_hXD7uZRjo1XsVoicKpX7aXK6WWDJzAi9XZ8R4Gg6a7xLKWgHqcK0zuhW5DGzr3EK9fYc23m4wfT5TVp6UN960VC85nT_oWqJhTT-BmJId566CM0zqmhbLDAlFv7YJXEP6tc0ek4amgbJ2-iBWRYYVlQ5UswSA3iOEj7zsGNXu8ry7iWj1Y_4nBLpKBG3NRRdjLyGpWZK9g7R1bYUlOcdBG5c-Mh2sMhDlUFgp9CiDjSbZCWu6JIN3mL64-0REy8Pck148eztK-7qjpGCMx6LzGE-xHRz-n-g7_H3nv518gMdcF9hKyL2NLRvIsEaaFvIxiDrPs=w884-h271-no?w=240" />
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*CO20-3P183ZAqrsJlF7n_A.png" />
 
 <meta property="og:title" content="Docker for Dummy With Golang &amp; MySQL" />
 <meta property="og:description" content="Say Hi&hellip; Halo teman-teman, lama belom nulis karena sedang ada beberapa kesibukan dan harus belajar yang bener sebelum nulis hehe. Pada kesempatan ini, saya akan membagikan pengalaman saya mengenai bagaiamana mengoperasikan docker secara sederhana melalui contoh aplikasi Golang. Tentunya artikel ini bukan artikel yang ditujukan kepada mastah-mastah yang sudah malang melintang di dunia devops. Saya menulis artikel ini dalam perspektif supaya saya yang seorang developer sedikit tahu apa yang dilakukan teman-teman devops supaya ketika bekerjasama nantinya akan mendapatkan hasil yang efektif." />
@@ -43,11 +43,11 @@
 
 
     
-    <link rel="stylesheet" href="https://indraoctama.com/css/reset.css?t=2018-12-13%2021%3a42%3a56.573439%20%2b0700%20WIB%20m%3d%2b0.044923257">
-    <link rel="stylesheet" href="https://indraoctama.com/css/pygments.css?t=2018-12-13%2021%3a42%3a56.573439%20%2b0700%20WIB%20m%3d%2b0.044923257">
-    <link rel="stylesheet" href="https://indraoctama.com/css/main.css?t=2018-12-13%2021%3a42%3a56.573439%20%2b0700%20WIB%20m%3d%2b0.044923257">
+    <link rel="stylesheet" href="https://indraoctama.com/css/reset.css?t=2018-12-28%2013%3a34%3a28.286575%20%2b0700%20WIB%20m%3d%2b0.056587174">
+    <link rel="stylesheet" href="https://indraoctama.com/css/pygments.css?t=2018-12-28%2013%3a34%3a28.286575%20%2b0700%20WIB%20m%3d%2b0.056587174">
+    <link rel="stylesheet" href="https://indraoctama.com/css/main.css?t=2018-12-28%2013%3a34%3a28.286575%20%2b0700%20WIB%20m%3d%2b0.056587174">
     
-        <link rel="stylesheet" href="https://indraoctama.com/css/override.css?t=2018-12-13%2021%3a42%3a56.573439%20%2b0700%20WIB%20m%3d%2b0.044923257">
+        <link rel="stylesheet" href="https://indraoctama.com/css/override.css?t=2018-12-28%2013%3a34%3a28.286575%20%2b0700%20WIB%20m%3d%2b0.056587174">
     
 
 
