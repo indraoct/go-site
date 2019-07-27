@@ -46,11 +46,11 @@ REPOSITORY TAG IMAGE ID CREATED SIZE dockerinaja latest 78de7207aa5a 3 minutes a
 
 
     
-    <link rel="stylesheet" href="https://indraoctama.com/css/reset.css?t=2019-07-27%2020%3a32%3a20.187991%20%2b0700%20WIB%20m%3d%2b0.040133920">
-    <link rel="stylesheet" href="https://indraoctama.com/css/pygments.css?t=2019-07-27%2020%3a32%3a20.187991%20%2b0700%20WIB%20m%3d%2b0.040133920">
-    <link rel="stylesheet" href="https://indraoctama.com/css/main.css?t=2019-07-27%2020%3a32%3a20.187991%20%2b0700%20WIB%20m%3d%2b0.040133920">
+    <link rel="stylesheet" href="https://indraoctama.com/css/reset.css?t=2019-07-27%2020%3a58%3a39.326601%20%2b0700%20WIB%20m%3d%2b0.041857414">
+    <link rel="stylesheet" href="https://indraoctama.com/css/pygments.css?t=2019-07-27%2020%3a58%3a39.326601%20%2b0700%20WIB%20m%3d%2b0.041857414">
+    <link rel="stylesheet" href="https://indraoctama.com/css/main.css?t=2019-07-27%2020%3a58%3a39.326601%20%2b0700%20WIB%20m%3d%2b0.041857414">
     
-        <link rel="stylesheet" href="https://indraoctama.com/css/override.css?t=2019-07-27%2020%3a32%3a20.187991%20%2b0700%20WIB%20m%3d%2b0.040133920">
+        <link rel="stylesheet" href="https://indraoctama.com/css/override.css?t=2019-07-27%2020%3a58%3a39.326601%20%2b0700%20WIB%20m%3d%2b0.041857414">
     
 
 
@@ -293,6 +293,28 @@ berarti kita akan memiliki semua dependensi begitu kita menyalin biner ini ke im
 seluruh paket untuk memastikan kita memiliki semua dependensi. Setelah eksekusi ini, kita akan memiliki biner di dalam
 folder proyek kita.
 <img src="https://lh3.googleusercontent.com/MBGVGjrgzR9FbwXjg-U1sebzrzN9DLlxrQdv3zJ25MERbW-bhA3cBzM7F1Nxkyxb8-FFBdAs-NrcFjMMwbI2aMMn6kPNEqLLJ_qQoJffGudpxUq-cK7xkwqcVJ0v5b7J5mEGfuP_8pTKON9xUp_aY4RJzCx4PKnl4F1r9kSouS8E3XFPVSmfkUdm8ndojgiZy1YJcHDuPuKofvOhQbI8r9Us5CMAoewoianJKTc7OQTV_cQras8d6zVMzzBPt4vcdnbFnU65btHowvn_9AUDoAGhKAoBwoceAw8805O60oQrdc7ZP1K1hXU-3xRrc_ue8HgZ89R5XrkA10G3OwUzzxwFUNjooo-la3o39SJS-0uWFwjTyq1CwMRHlfAGgWVv2Df5V2VJ4OEWi2tLDUcnc9_OajV2Ltoiix16p4VaVdgazIAtx6Mz9ix1vuzJ8zK7RvAZ3HCOfPeyhwYb1nsVoKZDf9Tzt4b26ceqcHW6FuXHG41eFFLjX2mFmvEgtjWzxQ7ALMkFCLzoXNyUazGI2T7DAJiV5wXzrehzY1FtRlXMAHKuRBMCoryOKVe4X3f6TJ_MBzBoyXtzVEKoyOaFvAsy55j-aOMhj3I4S8WmKaBnZ8N7Z2CSLFKX73UCYBgKUhpDs_QcndLwzAx9h1oBHX7_H-ub1A8=w970-h334-no" alt="File binary" /></p>
+
+<p>Berikut ini adalah file Dockerfile nya</p>
+
+<pre><code class="language-$text">FROM scratch
+
+MAINTAINER Indra Octama omyank2007i@gmail.com
+
+ADD main ./
+
+ARG appname=dockerinaja
+ARG http_port=1323
+
+ENTRYPOINT [&quot;/main&quot;]
+
+ENV PORT $http_port
+ENV DB_HOST yourhost
+ENV DB_PORT 3306
+ENV DB_USER yourusername
+ENV DB_PASS yourpassword
+
+EXPOSE $http_port
+</code></pre>
 
 <p>Kita ulangi lagi script berikut :</p>
 

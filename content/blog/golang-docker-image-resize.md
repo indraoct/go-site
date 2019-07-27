@@ -97,6 +97,28 @@ seluruh paket untuk memastikan kita memiliki semua dependensi. Setelah eksekusi 
 folder proyek kita.
 ![File binary](https://lh3.googleusercontent.com/MBGVGjrgzR9FbwXjg-U1sebzrzN9DLlxrQdv3zJ25MERbW-bhA3cBzM7F1Nxkyxb8-FFBdAs-NrcFjMMwbI2aMMn6kPNEqLLJ_qQoJffGudpxUq-cK7xkwqcVJ0v5b7J5mEGfuP_8pTKON9xUp_aY4RJzCx4PKnl4F1r9kSouS8E3XFPVSmfkUdm8ndojgiZy1YJcHDuPuKofvOhQbI8r9Us5CMAoewoianJKTc7OQTV_cQras8d6zVMzzBPt4vcdnbFnU65btHowvn_9AUDoAGhKAoBwoceAw8805O60oQrdc7ZP1K1hXU-3xRrc_ue8HgZ89R5XrkA10G3OwUzzxwFUNjooo-la3o39SJS-0uWFwjTyq1CwMRHlfAGgWVv2Df5V2VJ4OEWi2tLDUcnc9_OajV2Ltoiix16p4VaVdgazIAtx6Mz9ix1vuzJ8zK7RvAZ3HCOfPeyhwYb1nsVoKZDf9Tzt4b26ceqcHW6FuXHG41eFFLjX2mFmvEgtjWzxQ7ALMkFCLzoXNyUazGI2T7DAJiV5wXzrehzY1FtRlXMAHKuRBMCoryOKVe4X3f6TJ_MBzBoyXtzVEKoyOaFvAsy55j-aOMhj3I4S8WmKaBnZ8N7Z2CSLFKX73UCYBgKUhpDs_QcndLwzAx9h1oBHX7_H-ub1A8=w970-h334-no)
 
+Berikut ini adalah file Dockerfile nya 
+```$text
+FROM scratch
+
+MAINTAINER Indra Octama omyank2007i@gmail.com
+
+ADD main ./
+
+ARG appname=dockerinaja
+ARG http_port=1323
+
+ENTRYPOINT ["/main"]
+
+ENV PORT $http_port
+ENV DB_HOST yourhost
+ENV DB_PORT 3306
+ENV DB_USER yourusername
+ENV DB_PASS yourpassword
+
+EXPOSE $http_port
+```
+
 Kita ulangi lagi script berikut :
 
 ```$text
