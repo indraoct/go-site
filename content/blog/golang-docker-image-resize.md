@@ -2,7 +2,7 @@
 title: "Golang Docker Image Resize"
 date: 2019-07-27T17:51:33+07:00
 draft: false
-tags : [Golang,MySql,Data,Docker,Resize,Alpine,Scratch]
+tags : [Golang,MySql,Data,Docker,Resize,Alpine,Scratch,Indra Octama,Indra,Octama]
 categories : [Programming,IT,Devops]
 metaimage : "https://lh3.googleusercontent.com/X87duYDhvYYxPB4my89QdLDlhtDTHd6AGtk8NyaUgg1T-LP03ApAdNYlDelkz0vrxgu3elX39hBBinnv1s0DQjBh9yyK_isNreQ1qfrDPGdCdRMTrQhvAt9u73XinzP4dUFn9-6Wzpv4Wq1ot3GEA4HVCk73hOMhYSw4O7qkQX7Xv9gbYhY9cfqHgTWG4CsaSJ6BBfpFRFjsrGNAoLK2-vH2tzyWWByRDAGMsVukVGPD09Ypgu2-y7oIwCRphHbVKmZLmqfY23_NWTAiHzklRj67vYnzsPqrXUggqHaUbiPSvmDNpY-oI5zsQPlKJDeBR8o9Dj0H1xogcYd40ZEfPlkT-ifx1NiZmAVg3k8ghwvmpkCLIvgpowT2cyIiFFdCOmLOnKp5hobUxcwUIvXTZGF1ti2DUZQEFaOYc2CLTpfYrRvGOyG9Gl7nEoTAefprLY55TiYHimzE2qZ2gddI-vCNqaTIkS7FReS9lY84pJXwytZQjkLroHuswyAuudR8y-s7Lu6v6wLbBUiuRnEbaUqG2SRAGQHnNgcMjm19SZ18czqQ3d-mO01IVsYVXMns07Vzt-4PfuTVNl0CsrSblBKxAI4G6hhK_4BxAB11QcztGufP6MnkFA4o07e_fqeaJAD440mercSMdH0PYCt8Ae2G_wzeNMs=w1100-h619-no"
 ---
