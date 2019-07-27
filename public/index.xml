@@ -6,10 +6,20 @@
     <description>Recent content on Software Engineer and Product Manager</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 13 Dec 2018 13:38:33 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jul 2019 17:51:33 +0700</lastBuildDate>
     
 	<atom:link href="https://indraoctama.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang Docker Image Resize</title>
+      <link>https://indraoctama.com/golang-docker-image-resize-20190727/</link>
+      <pubDate>Sat, 27 Jul 2019 17:51:33 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/golang-docker-image-resize-20190727/</guid>
+      <description>Golang dan docker adalah paduan yang ciamik ketika kita membuat aplikasi microservice yang berjalan di server / cloud. Mengingat kembali artikel ini Docker For Dummy. Lalu muncul pertanyaan, mengapa file aplikasi yang hanya 8-an MB dikonversi ke docker menjadi 900-an MB?
+REPOSITORY TAG IMAGE ID CREATED SIZE dockerinaja latest 78de7207aa5a 3 minutes ago 952MB golang 1.11.1 45e48f60e268 2 minutes ago 777MB  Tentu saja ini berpengaruh pada saat melakukan docker push, docker pull, dan menghabiskan banyak space di harddisk.</description>
+    </item>
     
     <item>
       <title>Docker for Dummy With Golang &amp; MySQL</title>
