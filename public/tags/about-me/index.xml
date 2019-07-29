@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>about me on Software Engineer and Product Manager</title>
+    <link>https://indraoctama.com/tags/about-me/</link>
+    <description>Recent content in about me on Software Engineer and Product Manager</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 06 Jun 2018 13:43:52 +0700</lastBuildDate>
+    
+	<atom:link href="https://indraoctama.com/tags/about-me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Me</title>
+      <link>https://indraoctama.com/about/</link>
+      <pubDate>Wed, 06 Jun 2018 13:43:52 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/about/</guid>
+      <description>Hi, my name is Indra Octama made with love from Kulon Progo Yogyakarta. I am a fulltime software engineer who live in Cisauk , Tangerang , Banten, Indonesia. On weekday, I commute from Cisauk to Jakarta with KRL. I am a Introvert, nerd, book worm even tough I love to play game that called &amp;ldquo;Bulutangkis&amp;rdquo; &amp;ndash;&amp;gt; my smash is powerfull ;) call me if you want to play it with me.</description>
+    </item>
+    
+  </channel>
+</rss>

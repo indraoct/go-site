@@ -21,5 +21,23 @@
 REPOSITORY TAG IMAGE ID CREATED SIZE dockerinaja latest 78de7207aa5a 3 minutes ago 952MB golang 1.11.1 45e48f60e268 2 minutes ago 777MB  Tentu saja ini berpengaruh pada saat melakukan docker push, docker pull, dan menghabiskan banyak space di harddisk.</description>
     </item>
     
+    <item>
+      <title>About Me</title>
+      <link>https://indraoctama.com/about/</link>
+      <pubDate>Wed, 06 Jun 2018 13:43:52 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/about/</guid>
+      <description>Hi, my name is Indra Octama made with love from Kulon Progo Yogyakarta. I am a fulltime software engineer who live in Cisauk , Tangerang , Banten, Indonesia. On weekday, I commute from Cisauk to Jakarta with KRL. I am a Introvert, nerd, book worm even tough I love to play game that called &amp;ldquo;Bulutangkis&amp;rdquo; &amp;ndash;&amp;gt; my smash is powerfull ;) call me if you want to play it with me.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://indraoctama.com/about/</link>
+      <pubDate>Wed, 06 Jun 2018 13:43:52 +0700</pubDate>
+      
+      <guid>https://indraoctama.com/about/</guid>
+      <description>Hi, my name is Indra Octama made with love from Kulon Progo Yogyakarta. I am a fulltime software engineer who live in Cisauk , Tangerang , Banten, Indonesia. On weekday, I commute from Cisauk to Jakarta with KRL. I am a Introvert, nerd, book worm even tough I love to play game that called &amp;ldquo;Bulutangkis&amp;rdquo; &amp;ndash;&amp;gt; my smash is powerfull ;) call me if you want to play it with me.</description>
+    </item>
+    
   </channel>
 </rss>
